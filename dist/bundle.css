@@ -1,0 +1,163 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: sans-serif;
+}
+#app {
+  background: #f7f5f5;
+}
+#app .top-header {
+  display: flex;
+  align-items: center;
+  background: red;
+  color: white;
+  font-size: 4rem;
+}
+#app .top-header img {
+  width: 10%;
+  height: 10%;
+  margin-right: 5%;
+}
+#app .header {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+#app .header .item {
+  list-style-type: none;
+}
+#app .background-image {
+  width: 100vw;
+  position: relative;
+}
+#app .background-image img {
+  width: 100%;
+  height: 50vh;
+}
+#button {
+  text-align: center;
+  vertical-align: middle;
+  padding: 1rem;
+}
+#button.rounded {
+  border-radius: 1rem;
+  border: 1px solid grey;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: grey;
+}
+#button.sharpen {
+  border-radius: 0.5rem;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+#button.sharpen.red {
+  background: red;
+}
+#button.sharpen.grey {
+  background: grey;
+}
+#button:hover {
+  cursor: pointer;
+  box-shadow: 5px 5px 5px black;
+  opacity: 0.8;
+}
+#button:active {
+  transform: scale(0.8);
+  transition: transform 0.5s ease-out;
+}
+#content .header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 1rem;
+}
+#content .example {
+  margin: 2rem;
+  padding: 1rem;
+  position: relative;
+  background: white;
+}
+#content .example .title {
+  color: darkblue;
+  font-size: 2rem;
+}
+#content .example .divider {
+  width: 100%;
+  border-top: 1px solid black;
+  height: 1rem;
+}
+#content .example .divider::before {
+  content: "";
+}
+#content .example .detail {
+  font-size: 1.5rem;
+  color: grey;
+}
+#content .example .detail table {
+  border: 1px solid black;
+  margin-top: 1rem;
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center;
+  word-wrap: anywhere;
+  border-spacing: 0;
+}
+#content .example .detail table th,
+#content .example .detail table td {
+  padding: 2rem 0;
+}
+#content .example .detail table thead {
+  background: lightgray;
+}
+#content .example .detail table tbody td {
+  border: 1px solid black;
+}
+#footer {
+  padding: 3rem 6rem;
+  background: #302f2f;
+  color: white;
+}
+#footer .menu {
+  display: flex;
+  justify-content: center;
+}
+#footer .menu .gap {
+  padding: 0rem 0.1rem;
+}
+#footer .menu:first-child::before {
+  padding: 0rem 0.1rem;
+  content: "|";
+}
+#footer .menu .item {
+  padding: 0rem 0.1rem;
+}
+#footer .menu .item::after {
+  padding: 0rem 0.1rem;
+  content: "|";
+}
+#footer .menu .item:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
+#footer .company-info {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 1rem;
+}
+#footer .company-info .title::after {
+  content: ': ' attr(value);
+}
+
+
+/*# sourceMappingURL=bundle.css.map*/

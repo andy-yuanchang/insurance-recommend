@@ -1,0 +1,38 @@
+#button {
+    text-align: center;
+    vertical-align: middle;
+    padding: 1rem;
+    &.rounded {
+        border-radius: 1rem;
+        border: 1px solid grey;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: grey;
+    }
+
+    &.sharpen {
+        border-radius: 0.5rem;
+        border: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        &.red {
+            background: red;
+        }
+        &.grey {
+            background: grey;
+        }
+    }
+    
+    &:hover {
+        cursor: pointer;
+        box-shadow: 5px 5px 5px black;
+        opacity: 0.8;
+    }
+    &:active {
+        transform: scale(0.8);
+        transition: transform 0.5s ease-out;
+    }
+}

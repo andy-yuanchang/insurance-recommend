@@ -1,0 +1,39 @@
+#footer {
+    padding: 3rem 6rem;
+    background: rgb(48, 47, 47);
+    color: white;
+    .menu {
+        display: flex;
+        justify-content: center;
+        .gap {
+            padding: 0rem 0.1rem;
+        }
+        &:first-child {
+            &::before {
+                .gap();
+                content: "|";
+            }
+        }
+        .item {
+            .gap();
+            &::after {
+                .gap();
+                content: "|";
+            }
+            &:hover {
+                cursor: pointer;
+                opacity: 0.8;
+            }
+        }
+    }
+    .company-info {
+        display: flex;
+        justify-content: space-evenly;
+        margin-top: 1rem;
+        .title {
+            &::after {
+                content: ': ' attr(value);
+            }
+        }
+    }
+}

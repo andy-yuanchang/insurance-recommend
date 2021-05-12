@@ -1,0 +1,54 @@
+#content {
+    .header {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-wrap: wrap;
+        margin: 1rem;
+    }
+    .example {
+        margin: 2rem;
+        padding: 1rem;
+        position: relative;
+        background: white;
+
+        .title {
+            color: darkblue;
+            font-size: 2rem;
+        }
+
+        .divider {
+            width: 100%;
+            border-top: 1px solid black;
+            height: 1rem;
+            &::before {
+                content: "";
+            }
+        }
+
+        .detail {
+            font-size: 1.5rem;
+            color: grey;
+            table {
+                border: 1px solid black;
+                margin-top: 1rem;
+                width: 100%;
+                border-collapse: collapse;
+                text-align: center;
+                word-wrap: anywhere;
+                border-spacing: 0;
+                th, td {
+                    padding: 2rem 0;
+                }
+                thead {
+                    background: lightgray;
+                }
+                tbody {
+                    td {
+                        border: 1px solid black;
+                    }
+                }
+            }
+        }
+    }
+}
