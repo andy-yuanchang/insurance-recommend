@@ -3,14 +3,17 @@ const webpack = require('webpack')
 const express = require('express')
 const fs = require('fs')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const cfg = {
     entry: {
-        'bundle': ['./src/index.js']
+        'app': ['./src/index.js']
     } ,
     output: {
         path: path.resolve(__dirname, 'dist'),
-        filename: '[name].js'
+        filename: '[name].bundle.js',
+        clean: true,
+        assetModuleFilename: 'images/[hash][ext][query]' // define assets output extension name
     },
     mode: "development",
     resolve: {
@@ -35,12 +38,8 @@ const cfg = {
                 use: [MiniCssExtractPlugin.loader, 'css-loader']
             },
             {
-                test: /\.(png|woff|woff2|eot|ttf|svg|jpg)(\?.+)?$/,
-                loader: 'url-loader'
-            },
-            {
-                test: /\.json$/,
-                loader: 'json-loader'
+                test: /\.(png|woff|woff2|eot|ttf|svg|jpg|jpeg)(\?.+)?$/,
+                type: 'asset/resource',
             }
         ]
     },
@@ -53,10 +52,17 @@ const cfg = {
             });
         },
         https: false,
-        publicPath: '/dist'
+        contentBase: path.resolve(__dirname, 'dist'),
+        // publicPath: path.resolve(__dirname, 'dist')
     },
     plugins: [
-        new MiniCssExtractPlugin(),
+        new MiniCssExtractPlugin({
+            filename: "[name].bundle.css"
+        }),
+        new HtmlWebpackPlugin({
+            template: "template.html",
+            favicon: "src/waterdrop.jpg"
+        })
     ]
 }
 

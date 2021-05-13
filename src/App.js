@@ -8,6 +8,9 @@ import 'firebase/auth';
 import Content from './Content'
 import Footer from './Footer'
 
+import headerIcon from './water.jpeg'
+import headerBackgroundImage from './family.jpg'
+
 firebase.initializeApp({
     apiKey: "AIzaSyB_4jdm5ndooKNOfMzGQbpbbhUPAGD3mN8",
     authDomain: "insurance-recommendation-6e846.firebaseapp.com",
@@ -26,7 +29,7 @@ const App = () => {
         <div id="app">
             {/** sticky header */}
             <div className="top-header">
-                <img alt="煮水" src="./src/water.jpeg" />
+                <img alt="煮水" src={headerIcon} />
                 煮水人壽
             </div>
             <div className="header">
@@ -37,7 +40,7 @@ const App = () => {
                 <li className="item">熱門保險</li>
             </div>
             <div className="background-image">
-                <img alt="family" src="./src/family.jpg" />
+                <img alt="family" src={headerBackgroundImage} />
             </div>
             {/** insurance content */}
             <Content />
