@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './App.less'
 
 import firebase from 'firebase/app';
@@ -7,6 +7,7 @@ import 'firebase/auth';
 
 import Content from './Content'
 import Footer from './Footer'
+import StickyHeader from './StickyHeader'
 
 import headerIcon from './water.jpeg'
 import headerBackgroundImage from './family.jpg'
@@ -25,14 +26,29 @@ const auth = firebase.auth();
 const firestore = firebase.firestore();
 
 const App = () => {
+
+    const [isExpandMenu, setIsExpandMenu] = useState(false)
+    const { headerRef, isSticky, style } = StickyHeader();
+
+    const handleClickMenu = e => {
+        setIsExpandMenu(prevValue => {
+            return !prevValue
+        })
+    }
+
     return (
         <div id="app">
             {/** sticky header */}
-            <div className="top-header">
+            <div className="top-header" ref={headerRef} style={isSticky ? style : null}>
                 <img alt="煮水" src={headerIcon} />
-                煮水人壽
+                <p className="title">煮水人壽</p>
+                <p className={`menu-select-icon ${isExpandMenu && "activate"}`} onClick={handleClickMenu}>
+                    <div className="bar1" />
+                    <div className="bar2" />
+                    <div className="bar3" />
+                </p>
             </div>
-            <div className="header">
+            <div className={`header ${isExpandMenu || "hidden"}`}>
                 <li className="item">商品總覽</li>
                 <li className="item">優惠活動</li>
                 <li className="item">客服中心</li>

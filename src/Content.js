@@ -5,7 +5,7 @@ import Button from './Button'
 const Content = props => {
     return (
         <div id="content">
-            <div className="header">
+            <div className="content__header">
                 <Button
                     text="重點提問Ｑ＆Ａ"
                     className="rounded"

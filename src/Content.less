@@ -1,10 +1,16 @@
+@import './GeneralSetting.less';
 #content {
-    .header {
+    .content__header {
         display: flex;
         justify-content: space-around;
         align-items: center;
         flex-wrap: wrap;
         margin: 1rem;
+        @media screen and (max-width: @ipad-pro-width) {
+            & > * {
+                width: 100%;
+            }
+        }
     }
     .example {
         margin: 2rem;
